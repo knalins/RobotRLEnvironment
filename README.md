@@ -1,3 +1,12 @@
+---
+title: Warehouse Robot Navigation
+emoji: 🤖
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # Warehouse Robot Navigation — OpenEnv Environment
 
 A real-world **warehouse robot navigation** environment built with the [OpenEnv](https://github.com/meta-pytorch/OpenEnv) framework. An LLM agent controls a delivery robot navigating a grid-based warehouse floor, avoiding obstacles to reach a delivery goal.
