@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "warehouse-robot-nav"
+version = "0.1.0"
+description = "Warehouse robot navigation OpenEnv environment"
+requires-python = ">=3.10"
+dependencies = [
+    "openenv-core",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "pydantic>=2.0.0",
+    "websockets>=12.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[tool.setuptools.packages.find]
+include = ["warehouse_robot_nav*"]

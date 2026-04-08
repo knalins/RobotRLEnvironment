@@ -1,0 +1,46 @@
+name: warehouse_robot_nav
+description: >
+  Warehouse robot navigation environment. An LLM agent controls a robot
+  navigating a grid-based warehouse floor, avoiding obstacles to reach
+  a delivery goal. Three difficulty levels test spatial reasoning.
+version: 0.1.0
+
+tasks:
+  - name: easy
+    description: 5x5 grid with 2 obstacles. Tests basic directional navigation.
+  - name: medium
+    description: 7x7 grid with 6 obstacles. Requires planning around clusters.
+  - name: hard
+    description: 10x10 grid with 13 obstacles. Dense layout demands multi-step planning.
+
+action:
+  type: object
+  properties:
+    direction:
+      type: string
+      enum: ["up", "down", "left", "right"]
+
+observation:
+  type: object
+  properties:
+    grid:
+      type: string
+      description: Text rendering of the warehouse grid (R=robot, G=goal, X=obstacle)
+    robot_position:
+      type: array
+      items: { type: integer }
+    goal_position:
+      type: array
+      items: { type: integer }
+    message:
+      type: string
+    manhattan_distance:
+      type: integer
+    step_count:
+      type: integer
+    max_steps:
+      type: integer
+    task_name:
+      type: string
+    score:
+      type: number
