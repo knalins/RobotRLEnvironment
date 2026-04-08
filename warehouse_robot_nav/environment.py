@@ -109,6 +109,12 @@ class WarehouseRobotEnvironment(Environment):
         )
 
     def reset(self, seed=None, episode_id=None, **kwargs) -> WarehouseRobotObservation:
+        # Check global class-level pending task first
+        global_task = getattr(WarehouseRobotEnvironment, "_global_pending_task", None)
+        if global_task:
+            self.current_task = global_task
+            WarehouseRobotEnvironment._global_pending_task = None
+
         if self.pending_task:
             self.current_task = self.pending_task
             self.pending_task = None

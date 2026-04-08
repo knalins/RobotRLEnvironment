@@ -30,3 +30,14 @@ async def set_task(req: SetTaskRequest):
 async def list_tasks():
     from warehouse_robot_nav.environment import TASKS
     return {"tasks": list(TASKS.keys())}
+
+
+def main():
+    import uvicorn
+    import os
+    port = int(os.getenv("PORT", 7860))
+    uvicorn.run("server.app:app", host="0.0.0.0", port=port, reload=False)
+
+
+if __name__ == "__main__":
+    main()

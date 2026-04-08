@@ -19,4 +19,7 @@ dependencies = [
 dev = ["pytest", "httpx"]
 
 [tool.setuptools.packages.find]
-include = ["warehouse_robot_nav*"]
+include = ["warehouse_robot_nav*", "server*"]
+
+[project.scripts]
+warehouse-robot-nav = "server.app:main"
