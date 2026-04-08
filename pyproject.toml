@@ -22,4 +22,4 @@ dev = ["pytest", "httpx"]
 include = ["warehouse_robot_nav*", "server*"]
 
 [project.scripts]
-warehouse-robot-nav = "server.app:main"
+server = "server.app:main"
