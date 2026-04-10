@@ -11,6 +11,9 @@ pinned: false
 
 A real-world **warehouse robot navigation** environment built with the [OpenEnv](https://github.com/meta-pytorch/OpenEnv) framework. An LLM agent controls a delivery robot navigating a grid-based warehouse floor, avoiding obstacles to reach a delivery goal.
 
+### Live Environment
+**Hugging Face Space**: [warehouse-robot-nav](https://huggingface.co/spaces/knalins/warehouse-robot-nav)
+
 ## Environment Description
 
 The agent controls a robot (**R**) on a 2D grid and must navigate to a goal (**G**) while avoiding obstacles (**X**). The environment simulates autonomous warehouse robot path planning — a core challenge in logistics and robotics.
